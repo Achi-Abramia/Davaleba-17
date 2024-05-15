@@ -44,3 +44,40 @@ document.body.appendChild(input);
 document.body.appendChild(inputButton);
 document.body.appendChild(text);
 
+
+// 4.დავწეროთ ფუნქცია, რომელიც დაგვიბრუნებს არგუმენტად მიღებული ხარჯების ჯამს.
+
+// ფუნქციას არგუმენტად გადაეცით  მასივი - productData და დათვალეთ გადაცემული მასივში amount ის ჯამი
+
+//  const productData = [{product_id: 1, amount: 200}, { product_id: 2, amount: 300 }, { product_id:3, amount: 500 }] 
+// დაბრუნებული ჯამის მნიშნელობა გამოიტანეთ p ტეგის მნიშნელობაში
+
+
+const productData = [
+    {
+        product_id: 1,
+        amount: 200
+    },
+    {
+        product_id: 2,
+        amount: 300
+    },
+    {
+        product_id: 3,
+        amount: 500
+    }
+];
+
+function calculate(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i].amount;
+    }
+    return sum;
+};
+
+const total = calculate(productData);
+
+const sum = document.createElement("p");
+sum.textContent = `Total: ${total}`;
+document.body.appendChild(sum);
